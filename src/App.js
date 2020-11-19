@@ -11,7 +11,7 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route path="/about" component={About} />
-          <Route path="/users" render={() => <Users greetingMessage="Hello" />} />
+          <Route path="/users/:id" render={(props) => (<Users {...props} greetingMessage="Hello" />)} />
           <Route path="/strict-access" render={(props) => (<StrictAccess {...props} user={{ username: "joao", password: "1234" }} />)} />
           <Route exact path="/" component={Home} />
         </Switch>
